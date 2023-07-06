@@ -1,0 +1,193 @@
+{
+  "env": {
+    "browser": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended", "next", "prettier", "next/core-web-vitals"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["react", "react-hooks", "import"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@typescript-eslint/recommended"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "ecmaFeatures": {
+          "jsx": true
+        },
+        "project": "tsconfig.json",
+        "sourceType": "module"
+      },
+      "plugins": ["@typescript-eslint"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/adjacent-overload-signatures": "error",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unsafe-return": "off",
+        "@typescript-eslint/array-type": [
+          "error",
+          {
+            "default": "array-simple"
+          }
+        ],
+        "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/consistent-type-assertions": "error",
+        "@typescript-eslint/consistent-type-definitions": "error",
+        "@typescript-eslint/dot-notation": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/explicit-member-accessibility": [
+          "off",
+          {
+            "accessibility": "explicit"
+          }
+        ],
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/member-delimiter-style": [
+          "error",
+          {
+            "multiline": {
+              "delimiter": "semi",
+              "requireLast": true
+            },
+            "singleline": {
+              "delimiter": "semi",
+              "requireLast": false
+            }
+          }
+        ],
+        "@typescript-eslint/member-ordering": "error",
+        "@typescript-eslint/naming-convention": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-empty-interface": "error",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-inferrable-types": [
+          "error",
+          {
+            "ignoreParameters": true
+          }
+        ],
+        "@typescript-eslint/no-misused-new": "error",
+        "@typescript-eslint/no-namespace": "error",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/no-parameter-properties": "off",
+        "@typescript-eslint/no-this-alias": "error",
+        "@typescript-eslint/no-unused-expressions": "error",
+        "@typescript-eslint/no-use-before-define": "off",
+        "@typescript-eslint/no-var-requires": "error",
+        "@typescript-eslint/prefer-for-of": "error",
+        "@typescript-eslint/prefer-function-type": "error",
+        "@typescript-eslint/prefer-namespace-keyword": "error",
+        "@typescript-eslint/quotes": "off",
+        "@typescript-eslint/restrict-plus-operands": "error",
+        "@typescript-eslint/restrict-template-expressions": "off",
+        "@typescript-eslint/semi": ["warn", "always"],
+        "@typescript-eslint/unbound-method": "off",
+        "@typescript-eslint/triple-slash-reference": [
+          "error",
+          {
+            "path": "always",
+            "types": "prefer-import",
+            "lib": "always"
+          }
+        ],
+        "@typescript-eslint/type-annotation-spacing": "off",
+        "@typescript-eslint/unified-signatures": "error",
+        "@typescript-eslint/ban-ts-ignore": "off"
+      }
+    }
+  ],
+  "rules": {
+    "react/display-name": "off",
+    "react/button-has-type": "error",
+    "react/no-access-state-in-setstate": "error",
+    "react/no-deprecated": "error",
+    "react/no-find-dom-node": "off",
+    "react/no-direct-mutation-state": "error",
+    "react/no-redundant-should-component-update": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-curly-spacing": "warn",
+    "react/prop-types": "off",
+    "react-hooks/rules-of-hooks": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "arrow-parens": ["off", "always"],
+    "brace-style": ["off", "off"],
+    "comma-dangle": "off",
+    "complexity": "off",
+    "constructor-super": "error",
+    "curly": "error",
+    "eol-last": "off",
+    "eqeqeq": ["error", "smart"],
+    "guard-for-in": "error",
+    "id-blacklist": "off",
+    "id-match": "off",
+    "import/no-deprecated": "warn",
+    "import/order": "off",
+    "linebreak-style": "off",
+    "max-classes-per-file": "off",
+    "max-len": "off",
+    "new-parens": "off",
+    "newline-per-chained-call": "off",
+    "no-bitwise": "error",
+    "no-caller": "error",
+    "no-cond-assign": "error",
+    "no-debugger": "warn",
+    "no-duplicate-imports": "error",
+    "no-empty": "off",
+    "no-eval": "error",
+    "no-extra-semi": "off",
+    "no-fallthrough": "error",
+    "no-invalid-this": "off",
+    "no-irregular-whitespace": "off",
+    "no-multiple-empty-lines": "off",
+    "no-new-wrappers": "error",
+    "no-redeclare": "error",
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["@mui/*/*/*", "!@mui/material/test-utils/*"]
+      }
+    ],
+    "no-throw-literal": "error",
+    "no-trailing-spaces": "off",
+    "no-undef-init": "off",
+    "no-undef": "error",
+    "no-underscore-dangle": "off",
+    "no-unsafe-finally": "error",
+    "no-unused-labels": "error",
+    "no-var": "error",
+    "object-shorthand": "error",
+    "one-var": ["error", "never"],
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "return"
+      }
+    ],
+    "prefer-arrow/prefer-arrow-functions": "off",
+    "prefer-const": "error",
+    "prefer-template": "error",
+    "quote-props": "off",
+    "radix": "error",
+    "space-before-function-paren": "off",
+    "space-in-parens": ["off", "never"],
+    "spaced-comment": [
+      "warn",
+      "always",
+      {
+        "markers": ["/"]
+      }
+    ],
+    "use-isnan": "error",
+    "valid-typeof": "off"
+  }
+}
