@@ -1,46 +1,48 @@
-# Getting Started with Create React App
+# Product List Test Task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Powered by ReactJS, Typescript.
 
-## Available Scripts
+### System Requirements
 
-In the project directory, you can run:
+- Node.js ^18.16.1
+- NPM ^9.5.1
+ 
+## Setup
 
-### `npm start`
+Install dependencies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+npm install
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+### Development Server
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launch development server:
 
-### `npm run build`
+```bash
+npm run start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+and open [http://localhost:3000](http://localhost:3000) in your browser.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Build
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Run to build project static files:
 
-### `npm run eject`
+```bash
+npm run build
+```
+Path to the static project file [project-name]/dist
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Libraries
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [MUI v5](https://mui.com/material-ui/getting-started/overview/)
+- [Material Icons](https://mui.com/material-ui/material-icons/#main-content)
+- [React hook form](https://react-hook-form.com)
+- [Yup (validation package)](https://github.com/jquense/yup)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Redux Toolkit](https://redux-toolkit.js.org)
+- [Redux Persist](https://www.npmjs.com/package/redux-persist)
+- [Dayjs](https://day.js.org)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

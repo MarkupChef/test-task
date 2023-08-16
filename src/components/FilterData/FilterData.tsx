@@ -1,5 +1,6 @@
-import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, TextField } from '@mui/material';
-import { ChangeEvent, Dispatch, FC, SetStateAction } from 'react';
+import SearchIcon from '@mui/icons-material/Search';
+import { FormControl, InputAdornment, InputLabel, MenuItem, Select, SelectChangeEvent, TextField } from '@mui/material';
+import { ChangeEvent, Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
 import useAppSelector from '../../hooks/useAppSelector';
 
 interface FilterDataProps {
@@ -10,18 +11,44 @@ interface FilterDataProps {
 
 const FilterData: FC<FilterDataProps> = ({ currentCategoryId, setCurrentCategoryId, setSearchTerm }) => {
   const { categoryList } = useAppSelector((state) => state.common);
+  const [searchValue, setSearchValue] = useState('');
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setSearchTerm(searchValue);
+    }, 300);
+
+    return () => clearTimeout(timeoutId);
+  }, [searchValue, 300]);
 
   const handleChangeCategory = (event: SelectChangeEvent) => {
     setCurrentCategoryId(+event.target.value);
   };
 
   const handleSearch = (event: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
-    setSearchTerm(event.target.value);
+    setSearchValue(event.target.value);
   };
 
   return (
-    <header className={'flex gap-2 py-8'}>
-      <div className={'flex-grow'}>
+    <header className={'py-8'}>
+      <div className={'mb-6'}>
+        <TextField
+          fullWidth
+          size="medium"
+          variant="outlined"
+          placeholder="Category or product name"
+          label={'Search'}
+          onChange={handleSearch}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <SearchIcon />
+              </InputAdornment>
+            ),
+          }}
+        />
+      </div>
+      <div>
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">Category</InputLabel>
           <Select
@@ -39,16 +66,6 @@ const FilterData: FC<FilterDataProps> = ({ currentCategoryId, setCurrentCategory
             ))}
           </Select>
         </FormControl>
-      </div>
-      <div className={'flex-grow'}>
-        <TextField
-          fullWidth
-          size="medium"
-          variant="outlined"
-          placeholder="Name"
-          label={'Name'}
-          onChange={handleSearch}
-        />
       </div>
     </header>
   );

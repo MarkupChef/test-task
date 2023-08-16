@@ -25,10 +25,9 @@ const ThemeSwitcher: FC = () => {
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
-        bgcolor: 'background.default',
-        color: 'text.primary',
         borderRadius: 1,
         p: 3,
+        color: '#fff',
       }}
     >
       {theme.palette.mode} mode

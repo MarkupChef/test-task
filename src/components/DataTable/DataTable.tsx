@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import FilterData from '../FilterData';
-import MyTable from '../MyTable';
+import NewMyTable from '../NewMyTable';
 
 const DataTable = () => {
   const [currentCategoryId, setCurrentCategoryId] = useState(0);
@@ -13,7 +13,7 @@ const DataTable = () => {
         setCurrentCategoryId={setCurrentCategoryId}
         setSearchTerm={setSearchTerm}
       />
-      <MyTable currentCategoryId={currentCategoryId} searchTerm={searchTerm} />
+      <NewMyTable currentCategoryId={currentCategoryId} searchTerm={searchTerm} />
     </div>
   );
 };
